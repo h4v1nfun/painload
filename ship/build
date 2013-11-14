@@ -91,9 +91,14 @@ build_deps() {
   while test $# -gt 0; do
     deps="$(
       for f; do
-        for d in $(sed -n 's:^'"$build_include_macro"'$:\1:p' "$f"); do
-          build_resolve $d
-        done
+        cache="tmp/build_deps.cache.${f//\//%}"
+        if test "$f" -nt "$cache"; then
+          echo "refresh cache $cache" >&2
+          for d in $(sed -n 's:^'"$build_include_macro"'$:\1:p' "$f"); do
+            build_resolve $d
+          done > "$cache"
+        fi
+        cat "$cache"
       done
     )"
     set -- $deps
