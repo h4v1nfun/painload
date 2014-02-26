@@ -14,4 +14,4 @@ test:
 			} & \
 			i=$$(( i+1 )); \
 		done; \
-		wait
+		wait $$(jobs -p)
