@@ -68,5 +68,4 @@ deps "$1" $(encname "$1") \
       echo "#@@include begin $cn"
       cat "$cn"
       echo "#@@include end $cn"
-    done \
-  | sed '/^#@.*/d'
+    done
