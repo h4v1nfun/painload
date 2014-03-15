@@ -21,8 +21,12 @@ clean:
 distclean: clean
 	rm -f $(exefinouts)
 
-$(tmpoutdir)/%:
-	BUILD_PATH=$(libsrcdir) ./makeship $(exesrcdir)/$* > $@; chmod +x $@
+define buildrule
+$(tmpoutdir)/$(1): $(exesrcdir)/$(1) $(shell $(build) deps $(exesrcdir)/$(1))
+	$(build) compile $$< $$@
+endef
+
+$(foreach exe, $(exesrcs), $(eval $(call buildrule,$(exe))))
 
 $(finoutdir)/%: $(tmpoutdir)/%
 	cp $< $@
