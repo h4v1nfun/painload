@@ -1,5 +1,4 @@
 #!/bin/sh
-#@info
 #@strict
 #@include core
 cd $(dirname $0)

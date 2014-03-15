@@ -1,6 +1,5 @@
 #!/bin/sh
 # TODO: modularize zsh configuration and vim configuration
-#@info
 #@strict
 #@include core
 #@include punani

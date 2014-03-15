@@ -1,5 +1,4 @@
 #!/bin/sh
-#@info
 #@strict
 #@include punani
 # Can be overwritten before install

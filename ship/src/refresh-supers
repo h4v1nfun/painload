@@ -1,5 +1,4 @@
 #!/bin/sh
-#@info
 # usage: [DEBUG=1] [tincconf=/not/tinc/retiolum/tinc.conf] $0 
 # This is the implementation of the proposal how to update tinc supernode
 # connections 

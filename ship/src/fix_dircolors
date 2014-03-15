@@ -1,5 +1,4 @@
 #!/bin/sh
-#@info
 #@strict
 #@include core
 exists dircolors || die "no dircolors in PATH, bailing out"
